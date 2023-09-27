@@ -23,6 +23,7 @@ function setup () {
   maskImg.loadPixels();
 }
 
+
 function draw () {
   for(let i=0;i<20000;i++) {
     let x = floor(random(sourceImg.width));
@@ -36,8 +37,20 @@ function draw () {
     }
     else {
       let pointSize = 20;
-      ellipse(x, y, pointSize, pointSize);    
+      ellipse(x, y, pointSize, pointSize); 
+          
     }
+    drawSquares(10,10,50);
+    
+  }
+  function drawSquares(x,y,size){
+  
+    for(let ii=0; ii<50; ii+10){
+      fill(0,0,0,50);
+      rect(x+ii, y+ii, size, size);
+    }
+  }
+
   }
   renderCounter = renderCounter + 1;
   if(renderCounter > 10) {
@@ -46,7 +59,7 @@ function draw () {
     // uncomment this to save the result
     // saveArtworkImage(outputFile);
   }
-}
+
 
 function keyTyped() {
   if (key == '!') {
