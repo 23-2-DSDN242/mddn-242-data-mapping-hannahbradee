@@ -40,10 +40,10 @@ function draw () {
       ellipse(x, y, pointSize, pointSize); 
           
     }
-    drawSquares(10,10,50);
+    Squares(10,10,50);
     
   }
-  function drawSquares(x,y,size){
+  function Squares(x,y,size){
   
     for(let ii=0; ii<50; ii+10){
       fill(0,0,0,50);
