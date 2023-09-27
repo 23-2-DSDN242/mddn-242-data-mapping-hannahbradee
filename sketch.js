@@ -40,16 +40,16 @@ function draw () {
       ellipse(x, y, pointSize, pointSize); 
           
     }
-    Squares(10,10,50);
+    //Squares(10,10,50);
     
   }
-  function Squares(x,y,size){
+  //function Squares(x,y,size){
   
-    for(let ii=0; ii<50; ii+10){
-      fill(0,0,0,50);
-      rect(x+ii, y+ii, size, size);
-    }
-  }
+   // for(let ii=0; ii<50; ii+10){
+     // fill(0,0,0,50);
+     // rect(x+ii, y+ii, size, size);
+   // }
+ // }
 
   }
   renderCounter = renderCounter + 1;
