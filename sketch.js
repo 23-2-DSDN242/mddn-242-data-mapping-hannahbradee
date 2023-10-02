@@ -24,16 +24,16 @@ function setup () {
   maskImg.loadPixels();
 }
 
-let X_STOP = 640;
-let Y_STOP = 480;
-// let X_STOP = 1920;
-// let Y_STOP = 1080;
+// let X_STOP = 640;
+// let Y_STOP = 480;
+let X_STOP = 1920;
+let Y_STOP = 1080;
 let OFFSET = 20;
 
 let renderCounter=0;
 
 function draw () {
-  //for(let i=0;i<15000;i++) {
+  //for(let i=0;i<100;i++) {
    // let x = floor(random(sourceImg.width));
    // let y = floor(random(sourceImg.height));
     //let pix = sourceImg.get(x, y);
@@ -60,8 +60,14 @@ function draw () {
     for(let i=0; i<X_STOP; i++) {
       colorMode(RGB);
       let mask = maskImg.get(i, j);
+      
+
+
       if (mask[1] < 128) {
-        pix = sourceImg.get(i, j);
+        //pix = sourceImg.get(i, j);
+        let wave = sin(j);
+      let slip = map(wave, -2, 2, -OFFSET, OFFSET);
+      pix = sourceImg.get(i+slip, j);
       }
       else {
         let wave = sin(j*8);
@@ -90,17 +96,18 @@ function draw () {
   }
   
 //   }
-//   renderCounter = renderCounter + 1;
-//   if(renderCounter > 10) {
-//     console.log("Done!")
-//     noLoop();
-//     // uncomment this to save the result
-//     // saveArtworkImage(outputFile);
-//   }
+  // renderCounter = renderCounter + 1;
+  // if(renderCounter > 10) {
+  //   console.log("Done!")
+  //   noLoop();
+  //   // uncomment this to save the result
+  //   // saveArtworkImage(outputFile);
+  // }
 
 
-// function keyTyped() {
-//   if (key == '!') {
-//     saveBlocksImages();
-//   }
+function keyTyped() {
+  if (key == '!') {
+    saveBlocksImages();
+  }
+}
 }
