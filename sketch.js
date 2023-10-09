@@ -60,17 +60,21 @@ function draw () {
     for(let i=0; i<X_STOP; i++) {
       colorMode(RGB);
       let mask = maskImg.get(i, j);
-      
+       
 
 
       if (mask[1] < 128) {
-        //pix = sourceImg.get(i, j);
+    
+        push()
         let wave = sin(j);
       let slip = map(wave, -2, 2, -OFFSET, OFFSET);
+      
       pix = sourceImg.get(i+slip, j);
+      pop()
       }
+      
       else {
-        let wave = sin(j*8);
+        let wave = sin(j*2);
         let slip = map(wave, -1, 1, -OFFSET, OFFSET);
         pix = sourceImg.get(i+slip, j);
 
@@ -79,6 +83,7 @@ function draw () {
         //   pix[c] = brt;
         // }
       }
+
 
       set(i, j, pix);
     }
