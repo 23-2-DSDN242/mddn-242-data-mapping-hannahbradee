@@ -3,16 +3,13 @@ let maskImg=null;
 //let renderCounter=0;
 
 // change these three lines as appropiate
-<<<<<<< Updated upstream
+
 let sourceFile = "input_2.jpg";
 let maskFile   = "mask_2.png";
 //let mask2File = "mask2_3.png";
 let outputFile = "output_2.png";
-=======
-let sourceFile = "input_3.jpg";
-let maskFile   = "Mask_3.png";
-let outputFile = "output_1.png";
->>>>>>> Stashed changes
+
+l
 
 function preload() {
 
@@ -75,7 +72,7 @@ function draw () {
     
       
         let wave = sin(i);
-<<<<<<< Updated upstream
+
       let slip = map(wave, -2, 2, OFFSET, OFFSET);
       
       pix = sourceImg.get(i+slip-420, j+slip);
@@ -86,19 +83,8 @@ function draw () {
         let wave = sin(j*4);
         let slip = map(wave, -3, -0, -OFFSET, OFFSET);
         pix = sourceImg.get(i+slip-420, j+slip);
-=======
-      let slip = map(wave, -2, 2, -OFFSET, -OFFSET);
+
       
-      pix = sourceImg.get(i+slip, j+slip);
-    
-      }
-      
-      else {
-        let wave = sin(i*8);
-        let slip = map(wave, -1, 1, OFFSET, -OFFSET);
-        pix = sourceImg.get(i, j+slip);
-        pix = sourceImg.get(i+slip, j)
->>>>>>> Stashed changes
 
         // let brt = map(wave, -1, 1, 0, 255);
         // for(let c=0; c<3; c++) {
