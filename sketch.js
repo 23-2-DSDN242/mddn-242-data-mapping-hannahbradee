@@ -57,12 +57,7 @@ function draw () {
   for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
     for(let i=0; i<X_STOP; i++) {
       colorMode(RGB);
-      let pix= sourceImg.get(i, j);
-     let col = color(pix);
       let mask = maskImg.get(i-420,j);
-      let tex =textureImg.get(i-420,j);
-      
-
 
       if (mask[1] < 128) {
         let wave = sin(i);
@@ -79,15 +74,25 @@ function draw () {
         let slip = map(wave, -3, -0, -OFFSET, OFFSET);
         pix = sourceImg.get(i+slip-420, j+slip);
 
-        let new_col = [0, 0, 0, 255];
-        for(let k=0; k<3; k++) {
-          new_col[k] = map(40, 0, 100, pix[k], tex[k]);
+      
     
       }
       
-   
+      let back_color = [255, 255, 255, 255];
 
-      set(i, j, pix, new_col);
+      let tex = textureImg.get(i-420, j);
+      if(tex[1] > 10 && tex[1] < 250) {
+        for(k=0; k<3; k++) {
+          pix[k] = map(10, 0, 100, pix[k], tex[k]);
+        }
+      }
+      
+      if(tex[1] > 10) {
+        set(i, j, pix);
+      }
+      else {
+        set(i, j, back_color);
+      }
       
     }
   
@@ -118,7 +123,7 @@ function draw () {
   //   // uncomment this to save the result
   //   // saveArtworkImage(outputFile);
   // }
-}}
+}
 
 function keyTyped() {
   if (key == '!') {
