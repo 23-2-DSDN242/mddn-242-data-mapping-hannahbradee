@@ -117,11 +117,11 @@ function draw () {
   //   // uncomment this to save the result
   //   // saveArtworkImage(outputFile);
   // }
-}
+}}
 
 function keyTyped() {
   if (key == '!') {
     saveBlocksImages();
   }
 }
-}
+
