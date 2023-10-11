@@ -57,9 +57,9 @@ function draw () {
   for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
     for(let i=0; i<X_STOP; i++) {
       colorMode(RGB);
-     
+     let col = color(pix);
       let mask = maskImg.get(i-420,j);
-      
+      let tex =textureImg.get(i-420,j);
       
 
 
@@ -67,6 +67,7 @@ function draw () {
         let wave = sin(i);
         let slip = map(wave, -2, 2, OFFSET, OFFSET);
         pix = sourceImg.get(i+slip-420, j+slip);
+
         
       }
       
@@ -77,13 +78,15 @@ function draw () {
         let slip = map(wave, -3, -0, -OFFSET, OFFSET);
         pix = sourceImg.get(i+slip-420, j+slip);
 
-    
+        let new_col = [0, 0, 0, 255];
+        for(let k=0; k<3; k++) {
+          new_col[k] = map(40, 0, 100, pix[k], tex[k]);
     
       }
       
    
 
-      set(i, j, pix);
+      set(i, j, pix, new_col);
       
     }
   
@@ -121,5 +124,3 @@ function keyTyped() {
     saveBlocksImages();
   }
 }
-
-
