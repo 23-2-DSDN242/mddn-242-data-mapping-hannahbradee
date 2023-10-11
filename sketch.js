@@ -57,6 +57,7 @@ function draw () {
   for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
     for(let i=0; i<X_STOP; i++) {
       colorMode(RGB);
+      let pix= sourceImg.get(i, j);
      let col = color(pix);
       let mask = maskImg.get(i-420,j);
       let tex =textureImg.get(i-420,j);
