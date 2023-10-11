@@ -80,7 +80,9 @@ function draw () {
       else {
         let wave = sin(j*4);
         let slip = map(wave, -3, -0, -OFFSET, OFFSET);
-        pix = sourceImg.get(i+slip-420, j+slip);           // let brt = map(wave, -1, 1, 0, 255);
+        pix = sourceImg.get(i+slip-420, j+slip);
+
+         // let brt = map(wave, -1, 1, 0, 255);
         // for(let c=0; c<3; c++) {
         //   pix[c] = brt;
         // }
@@ -110,11 +112,12 @@ function draw () {
   //   // uncomment this to save the result
   //   // saveArtworkImage(outputFile);
   // }
-
+}
 
 function keyTyped() {
   if (key == '!') {
     saveBlocksImages();
   }
 }
-}
+
+
