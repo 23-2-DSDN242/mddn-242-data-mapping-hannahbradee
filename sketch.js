@@ -4,10 +4,9 @@ let maskImg=null;
 
 // change these three lines as appropiate
 
-let sourceFile = "input_2.jpg";
-let maskFile   = "mask_2.png";
-//let mask2File = "mask2_3.png";
-let outputFile = "output_2.png";
+let sourceFile = "input_3.jpg";
+let maskFile   = "mask_3.png";
+let outputFile = "output_3.png";
 
 l
 
@@ -15,7 +14,6 @@ function preload() {
 
   sourceImg = loadImage(sourceFile);
   maskImg = loadImage(maskFile);
- // mask2Img = loadImage(mask2File);
   colorMode(HSB);
 }
 
@@ -82,11 +80,7 @@ function draw () {
       else {
         let wave = sin(j*4);
         let slip = map(wave, -3, -0, -OFFSET, OFFSET);
-        pix = sourceImg.get(i+slip-420, j+slip);
-
-      
-
-        // let brt = map(wave, -1, 1, 0, 255);
+        pix = sourceImg.get(i+slip-420, j+slip);           // let brt = map(wave, -1, 1, 0, 255);
         // for(let c=0; c<3; c++) {
         //   pix[c] = brt;
         // }
