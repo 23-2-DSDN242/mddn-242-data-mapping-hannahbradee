@@ -2,12 +2,12 @@ let sourceImg=null;
 let maskImg=null;
 //let renderCounter=0;
 
-// change these three lines as appropiate
+// change these three lines as appropiate to switch between photos and masks.
 
-let sourceFile = "Input_2.jpg";
-let maskFile   = "Mask_2.png";
-let textureFile = "TexMask_2.png";
-let outputFile = "output_2.png";
+let sourceFile = "Input_7.jpg";
+let maskFile   = "Mask_7.png";
+let textureFile = "TexMask_7.png";
+let outputFile = "output_7.png";
 
 
 
@@ -29,12 +29,10 @@ function setup () {
   sourceImg.loadPixels();
   maskImg.loadPixels();
   textureImg.loadPixels();
-
-  
-
  
 }
 
+//setting the boundaries on the canvas to control what portion of the canvas gets rendered. 
 
 let X_STOP = 1920;
 let Y_STOP = 1080;
@@ -49,7 +47,8 @@ let renderCounter=0;
 function draw () {
  
   
-
+//this for loop and if statement set the sin wave effect for the main mask.
+//it also sets the effect for the main source image, however ive kept it plain.
 
   angleMode(DEGREES);
   let num_lines_to_draw = 40;
@@ -66,17 +65,15 @@ function draw () {
 
         
       }
-      
-
       else {
         
         let wave = sin(j*4);
         let slip = map(wave, -3, -0, -OFFSET, OFFSET);
         pix = sourceImg.get(i+slip-420, j+slip);
-
-      
     
       }
+
+      //this is the code that controls the top texture mask that i have made to frame the main subject of each image (Bertie).
       
       let back_color = [255, 255, 255, 255];
 
@@ -108,13 +105,8 @@ function draw () {
     console.log("Done!")
     noLoop();
     // uncomment this to save the result
-     saveArtworkImage(outputFile);
+     //saveArtworkImage(outputFile);
   }
-
- 
- 
-
-
 
 }
 
@@ -122,5 +114,6 @@ function keyTyped() {
   if (key == '!') {
     saveBlocksImages();
   }
+
 }
 
