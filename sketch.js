@@ -4,10 +4,10 @@ let maskImg=null;
 
 // change these three lines as appropiate
 
-let sourceFile = "input_3.jpg";
-let maskFile   = "Mask_3.png";
-let textureFile = "TexMask_3.png";
-let outputFile = "output_3.png";
+let sourceFile = "Input_2.jpg";
+let maskFile   = "Mask_2.png";
+let textureFile = "TexMask_2.png";
+let outputFile = "output_2.png";
 
 
 
@@ -108,21 +108,14 @@ function draw () {
     console.log("Done!")
     noLoop();
     // uncomment this to save the result
-    // saveArtworkImage(outputFile);
+     saveArtworkImage(outputFile);
   }
 
  
  
 
 
-//   }
-  // renderCounter = renderCounter + 1;
-  // if(renderCounter > 10) {
-  //   console.log("Done!")
-  //   noLoop();
-  //   // uncomment this to save the result
-  //   // saveArtworkImage(outputFile);
-  // }
+
 }
 
 function keyTyped() {
