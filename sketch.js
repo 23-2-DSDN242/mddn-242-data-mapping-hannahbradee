@@ -4,10 +4,10 @@ let maskImg=null;
 
 // change these three lines as appropiate to switch between photos and masks.
 
-let sourceFile = "Input_7.jpg";
-let maskFile   = "Mask_7.png";
-let textureFile = "TexMask_7.png";
-let outputFile = "output_7.png";
+let sourceFile = "Input_6.jpg";
+let maskFile   = "Mask_6.png";
+let textureFile = "TexMask_6.png";
+let outputFile = "output_6.png";
 
 
 
